@@ -18,6 +18,16 @@ public class DiceTester {
     public static void setup() {
         dice = new Dice();
     }
+    
+    @Test
+    public void rollStats() {
+    	for (int i=0; i < 6; i++) {
+    		// roll 4 six sided dice and keep the best three rolls
+    		int roll = dice.stackedRoll(4, 3, 6);
+    		assertTrue(roll >= 3 && roll <= 18);
+    		logger.info("Stat roll: " + roll);
+    	}
+    }
 
     @Test
     public void testRoll3d6() {
