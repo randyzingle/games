@@ -21,8 +21,20 @@ public class PlayerCharacter {
 	}
 
 	private void generateInitialStats() {
-		// TODO Auto-generated method stub
-		
+		Dice dice = new Dice();
+		strength = dice.stackedRoll(4, 3, 6);
+		intelligence = dice.stackedRoll(4, 3, 6);
+		wisdom = dice.stackedRoll(4, 3, 6);
+		constitution = dice.stackedRoll(4, 3, 6);
+		dexterity = dice.stackedRoll(4, 3, 6);
+		charisma = dice.stackedRoll(4, 3, 6);
+	}
+
+	@Override
+	public String toString() {
+		return "PlayerCharacter [firstName=" + firstName + ", strength=" + strength + ", intelligence=" + intelligence
+				+ ", wisdom=" + wisdom + ", dexterity=" + dexterity + ", constitution=" + constitution + ", charisma="
+				+ charisma + "]";
 	}
 
 }
